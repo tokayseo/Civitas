@@ -149,6 +149,9 @@ cp civitas-cli /usr/bin
 cp civitas-tx /usr/bin
 ```
 ```
+cd
+```
+```
 mkdir -p .civitas
 ```
 ```
