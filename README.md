@@ -122,21 +122,28 @@ cd Civitas
 ```
 ```
 find . -name "*.sh" -exec sudo chmod 755 {} \;
-``````
+```
+```
 ./autogen.sh
-``````
+```
+```
 ./configure --without-gui
-``````
+```
+```
 make
-``````
+```
+```
 make install
-``````
+```
+```
 cd src
-``````
+```
+```
 strip civitasd
 strip civitas-cli
 strip civitas-tx
-``````
+```
+```
 cp civitasd /usr/bin
 cp civitas-cli /usr/bin
 cp civitas-tx /usr/bin
