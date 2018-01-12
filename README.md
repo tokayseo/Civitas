@@ -23,7 +23,7 @@ Coming Soon
    
    Press Ok (you will need to restart the wallet)
    
-   ![Alt text](https://github.com/tokayseo/Civitas/blob/master/Capture.PNG "Wallet Settings")
+   ![Alt text](https://github.com/tokayseo/Civitas/blob/master/civitas.PNG "Wallet Settings")
 
    
    
