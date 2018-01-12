@@ -185,9 +185,9 @@ civitasd &
 
 1. On your local machine open your `masternode.conf` file.
    Depending on your operating system you will find it in:
-   * Windows: `%APPDATA%\polisCore\`
-   * Mac OS: `~/Library/Application Support/polisCore/`
-   * Unix/Linux: `~/.poliscore/`
+   * Windows: `%APPDATA%\Civitas\`
+   * Mac OS: `~/Library/Application Support/Civitas/`
+   * Unix/Linux: `~/.civitas/`
    
    Leave the file open
 2. Go to "Tools" -> "Debug console"
