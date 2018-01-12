@@ -51,6 +51,18 @@ apt-get -y update
 apt-get -y upgrade
 ```
 ```
+cd /var
+touch swap.img
+chmod 600 swap.img
+dd if=/dev/zero of=/var/swap.img bs=1024k count=2000
+mkswap /var/swap.img
+swapon /var/swap.img
+echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
+```
+```
+cd
+```
+```
 apt-get -y install software-properties-common
 ```
 ```
@@ -97,25 +109,43 @@ apt-get -y install libdb4.8-dev
 apt-get -y install libdb4.8++-dev
 ```
 ```
-wget https://github.com/polispay/polis/releases/download/v1.2.0/poliscore-1.2.0-linux.zip
+wget https://civitascoin.com/civitas-linux.zip
 ```
 ```
-unzip poliscore-1.2.0-linux.zip
+unzip civitas-linux.zip
 ```
 ```
-rm poliscore-1.2.0-linux.zip
+rm civitas-linux.zip
 ```
 ```
-cp poliscore-1.2.0-linux/usr/local/bin/polis{d,-cli} /usr/local/bin
+cd Civitas
 ```
 ```
-cd
+find . -name "*.sh" -exec sudo chmod 755 {} \;
+``````
+./autogen.sh
+``````
+./configure --without-gui
+``````
+make
+``````
+make install
+``````
+cd src
+``````
+strip civitasd
+strip civitas-cli
+strip civitas-tx
+``````
+cp civitasd /usr/bin
+cp civitas-cli /usr/bin
+cp civitas-tx /usr/bin
 ```
 ```
-mkdir -p .poliscore
+mkdir -p .civitas
 ```
 ```
-nano .poliscore/polis.conf
+nano .civitas/civitas.conf
 ```
 Replace:
 externalip=VPS_IP_ADDRESS
@@ -131,24 +161,17 @@ daemon=0
 logtimestamps=1
 maxconnections=256
 externalip=VPS_IP_ADDRESS
-bind=VPS_IP_ADDRESS
-masternodeaddr=VPS_IP_ADDRESS:PORT
+masternodeaddr=VPS_IP_ADDRESS:18843
 masternodeprivkey=WALLET_GENKEY
 masternode=1
-connect=35.227.49.86:24126
-connect=192.243.103.182:24126
-connect=185.153.231.146:24126
-connect=91.223.147.100:24126
-connect=96.43.143.93:24126
-connect=104.236.147.210:24126
 ```
 CTRL X to save it. Y for yes, then ENTER.
 ```
-polisd &
+civitasd &
 ```
 
-3.Use `watch polis-cli getinfo` to check and wait til it's synced 
-  (look for blocks number and compare with block explorer http://block.polispay.org/ )
+3.Use `watch civitas-cli getinfo` to check and wait til it's synced 
+
 
 
 ## Cold Wallet Setup Part 2 
@@ -177,6 +200,5 @@ mn1 1.2.3.4:24126 3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 12345678xxxxxxxxxxx
 7. Save the file, exit your wallet and reopen your wallet.
 8. Go to the "Masternodes" tab
 9. Click "Start All"
-10. You will see "WATCHDOG_EXPIRED". Just wait few minutes
 
 Cheers !
