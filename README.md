@@ -45,10 +45,13 @@ Coming Soon
    - Windows users [follow this guide](https://www.digitalocean.com/community/tutorials/how-to-log-into-your-droplet-with-putty-for-windows-users) to log into your VPS.
 2. Copy/paste these commands into the VPS and hit enter: (One Box At A Time)
 ```
-apt-get -y update
+sudo su
 ```
 ```
-apt-get -y upgrade
+sudo apt-get update
+```
+```
+sudo apt-get upgrade
 ```
 ```
 cd /var
@@ -69,44 +72,10 @@ apt-get -y install software-properties-common
 apt-add-repository -y ppa:bitcoin/bitcoin
 ```
 ```
-apt-get -y update
+apt-get update
 ```
 ```
-apt-get -y install \
-    wget \
-    git \
-    unzip \
-    libevent-dev \
-    libboost-dev \
-    libboost-chrono-dev \
-    libboost-filesystem-dev \
-    libboost-program-options-dev \
-    libboost-system-dev \
-    libboost-test-dev \
-    libboost-thread-dev \
-    libminiupnpc-dev \
-    build-essential \
-    libtool \
-    autotools-dev \
-    automake \
-    pkg-config \
-    libssl-dev \
-    libevent-dev \
-    bsdmainutils \
-    libzmq3-dev \
-    nano
-```
-```
-apt-get -y update
-```
-```
-apt-get -y upgrade
-```
-```
-apt-get -y install libdb4.8-dev
-```
-```
-apt-get -y install libdb4.8++-dev
+apt-get -y install wget git unzip libevent-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libzmq3-dev nano libdb4.8-dev libdb4.8++-dev
 ```
 ```
 wget https://civitascoin.com/civitas-linux.zip
@@ -167,6 +136,7 @@ rpcpassword=passhf95uiygr5308h08r3h0249fbgh7389h973
 rpcallowip=127.0.0.1
 listen=1
 server=1
+#Set deamon to 1 if you wanna run it in background
 daemon=0
 logtimestamps=1
 maxconnections=256
@@ -178,6 +148,7 @@ masternode=1
 CTRL X to save it. Y for yes, then ENTER.
 ```
 civitasd &
+#if you set deamon=1 in civitas.conf you can do 'civitasd' without &
 ```
 
 3.Use `watch civitas-cli getinfo` to check and wait til it's synced 
