@@ -118,7 +118,7 @@ tar -xzf civitas-1.2.1.tar.gz
 rm civitas-1.2.1.tar.gz
 ```
 ```
-cd Civitas
+cd civitas-1.2.1
 ```
 ```
 find . -name "*.sh" -exec sudo chmod 755 {} \;
