@@ -112,7 +112,7 @@ apt-get -y install libdb4.8++-dev
 wget https://github.com/eastcoastcrypto/Civitas/releases/download/1.2.1/civitas-1.2.1.tar.gz
 ```
 ```
-tar -xfv civitas-1.2.1.tar.gz
+tar -xzf civitas-1.2.1.tar.gz
 ```
 ```
 rm civitas-1.2.1.tar.gz
