@@ -109,13 +109,13 @@ apt-get -y install libdb4.8-dev
 apt-get -y install libdb4.8++-dev
 ```
 ```
-wget https://civitascoin.com/civitas-linux.zip
+wget https://github.com/eastcoastcrypto/Civitas/releases/download/1.2.1/civitas-1.2.1.tar.gz
 ```
 ```
-unzip civitas-linux.zip
+tar -xfv civitas-1.2.1.tar.gz
 ```
 ```
-rm civitas-linux.zip
+rm civitas-1.2.1.tar.gz
 ```
 ```
 cd Civitas
