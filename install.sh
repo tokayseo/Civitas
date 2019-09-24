@@ -1,3 +1,4 @@
+apt-get -y install software-properties-common
 apt-add-repository -y ppa:bitcoin/bitcoin
 apt-get update
 apt-get upgrade
